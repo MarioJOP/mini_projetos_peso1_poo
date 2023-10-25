@@ -71,7 +71,7 @@ class PulaPula:
                 self.criancasPulando.append(self.filaEspera[0])
                 self.filaEspera.pop(0)
                 return True
-        #Não há espaço
+        # Não há espaço
         return False
 
     def sair(self):
@@ -88,12 +88,14 @@ class PulaPula:
             # Crianca esta pulando
             if crianca_pulando.getNome() == nome:
                 self.criancasPulando.remove(crianca_pulando)
+                self.conta[crianca_pulando.getNome()] = 0  # pagar conta
                 return True
 
         for crianca_na_fila in self.filaEspera:
             # Crianca esta na fila
             if crianca_na_fila.getNome() == nome:
                 self.filaEspera.remove(crianca_na_fila)
+                self.conta[crianca_na_fila.getNome()] = 0  # pagar conta
                 return True
 
         # Crianca nao esta pulando e nao esta na lista
